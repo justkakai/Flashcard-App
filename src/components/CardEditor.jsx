@@ -1,16 +1,9 @@
-import { useState } from "react";
+import React, { useContext } from 'react';
+import ArrayContext from '../contexts/ArrayContext';
 
 function CardEditor() {
 
-    const [cardArray, setCardToAdd] = useState([]);
-    const [cardFront, setFrontOfCard] = useState('');
-    const [cardBack, setBackOfCard] = useState('');
-
-    const handleSubmit = () => {
-        setCardToAdd([...cardArray].concat({ front: cardFront, back: cardBack, id: new Date().getTime() }))
-        setFrontOfCard('');
-        setBackOfCard('')
-    }
+    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit] = useContext(ArrayContext)
 
     return (
         <div className="editor-section">

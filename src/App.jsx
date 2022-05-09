@@ -6,17 +6,33 @@ Bonus
 For each card, add a button to edit the card.
 */
 
+import React, { useState } from 'react';
 import CardEditor from './components/CardEditor';
 import CardViewer from './components/CardViewer';
+import ArrayContext from './contexts/ArrayContext';
 import './App.css';
 
 function App() {
+
+  const [cardArray, setCardToAdd] = useState([]);
+  const [cardFront, setFrontOfCard] = useState('');
+  const [cardBack, setBackOfCard] = useState('');
+
+  const handleSubmit = () => {
+      setCardToAdd([...cardArray].concat({ id: new Date().getTime(), front: cardFront, back: cardBack }))
+      setFrontOfCard('');
+      setBackOfCard('')
+      console.log(cardArray);
+  }
+
   return (
+    <ArrayContext.Provider value={[cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit]}>
     <div className="App">
       <h1>Pick your poison</h1>
       <CardEditor />
       <CardViewer />
     </div>
+    </ArrayContext.Provider>
   );
 }
 

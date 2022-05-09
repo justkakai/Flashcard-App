@@ -17,3 +17,10 @@
   display: flex;
   gap: 20px;
 }
+
+.viewer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
