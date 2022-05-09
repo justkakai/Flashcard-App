@@ -10,8 +10,8 @@ function CardEditor() {
             <ul>
                 {cardArray.map((item, index) => (
                     <li key={item.id} className="card-display">
-                        <span>{item.front}</span>
-                        <span>{item.back}</span>
+                        <span><strong>Front:</strong> {item.front}</span>
+                        <span><strong>Back:</strong> {item.back}</span>
                         <button>Delete card</button>
                     </li>
                 ))}

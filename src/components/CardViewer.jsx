@@ -8,14 +8,18 @@ const Card = styled.div`
     position: absolute;
     top: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
     height: 25rem;
     width: 20rem;
+    outline: 1px solid transparent;
     border: 5px solid black;
-    background-color: red;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    border-radius: 10px;
+    background-color: purple;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 50%  51%;
 `
 
 function CardViewer() {
@@ -29,8 +33,13 @@ function CardViewer() {
                     transform: `rotate(${randomDeg[Math.floor(Math.random() * randomDeg.length)]}deg)`,
                 }}>
                     {item.front}
+                    <span>Click to view answer!</span>
                 </Card>
             ))}
+            <div className="buttons-container">
+                <button className="flip-button">Next Card!</button>
+                <button className="shuffle-button">Shuffle Cards</button>
+            </div>
 
         </div>
     )
