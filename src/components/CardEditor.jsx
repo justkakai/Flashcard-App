@@ -3,7 +3,7 @@ import ArrayContext from '../contexts/ArrayContext';
 
 function CardEditor() {
 
-    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit] = useContext(ArrayContext)
+    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit] = useContext(ArrayContext)
 
     return (
         <div className="editor-section">

@@ -17,16 +17,18 @@ function App() {
   const [cardArray, setCardToAdd] = useState([]);
   const [cardFront, setFrontOfCard] = useState('');
   const [cardBack, setBackOfCard] = useState('');
+  const [zIndex, setZIndex] = useState(-2);
 
   const handleSubmit = () => {
-      setCardToAdd([...cardArray].concat({ id: new Date().getTime(), front: cardFront, back: cardBack }))
+      setCardToAdd([...cardArray].concat({ id: new Date().getTime(), zIndex: zIndex, front: cardFront, back: cardBack }));
+      setZIndex(zIndex - 1);
       setFrontOfCard('');
       setBackOfCard('')
       console.log(cardArray);
   }
 
   return (
-    <ArrayContext.Provider value={[cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit]}>
+    <ArrayContext.Provider value={[cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit]}>
     <div className="App">
       <h1>Pick your poison</h1>
       <CardEditor />
