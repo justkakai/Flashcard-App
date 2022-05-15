@@ -1,0 +1,31 @@
+.viewer-section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    color: white;
+}
+
+.card-text {
+    font-size: 1.5rem;
+}
+
+.nav-buttons-container-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}

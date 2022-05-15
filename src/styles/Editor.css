@@ -1,0 +1,48 @@
+.editor-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--primary-color);
+}
+
+.toggle-list {
+    font-family: var(--Clash-Medium);
+    padding: 2rem 4rem;
+    font-size: 2.3rem;
+}
+
+.editor-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    padding: 1rem 0;
+    overflow-y: scroll;
+    transition: height 0.7s;
+}
+
+.editor-section li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 0;
+}
+
+.editor-section li button {
+    padding: 0.7rem 2rem;
+}
+
+.add-card-section {
+    display: flex;
+    gap: 10px;
+}
+
+.card-display {
+    display: flex;
+    gap: 20px;
+}
+
