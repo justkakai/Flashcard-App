@@ -1,11 +1,13 @@
 .App {
+  height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-.editor-section {
+.home-section, .editor-section {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,28 +32,38 @@ input {
 
 .viewer-section {
   position: relative;
-  z-index: -100000;
-  height: 30rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* border: 2px solid greenyellow; */
+}
+
+.card-container {
+  position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 2px solid gold; */
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
 }
 
 button {
-  z-index: 0;
+  /* z-index: 0; */
   padding: 0.5rem 2rem;
   border: 1px solid white;
   background-color: rgb(49, 49, 49);
   color: white;
 }
 
-.flip-button {
-  position: absolute;
-  bottom: 0;
-}
-
-.shuffle-button {
-  position: absolute;
-  bottom: -40px;
+.nav-buttons-container-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid firebrick; */
+  width: 100%;
+  height: 10%;
 }

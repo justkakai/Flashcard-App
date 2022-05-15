@@ -7,8 +7,10 @@ For each card, add a button to edit the card.
 */
 
 import React, { useState } from 'react';
-import CardEditor from './components/CardEditor';
-import CardViewer from './components/CardViewer';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Home from './routes/Home';
+import CardEditor from './routes/CardEditor';
+import CardViewer from './routes/CardViewer';
 import ArrayContext from './contexts/ArrayContext';
 import './App.css';
 
@@ -20,20 +22,24 @@ function App() {
   const [zIndex, setZIndex] = useState(-2);
 
   const handleSubmit = () => {
-      setCardToAdd([...cardArray].concat({ id: new Date().getTime(), zIndex: zIndex, front: cardFront, back: cardBack }));
-      setZIndex(zIndex - 1);
-      setFrontOfCard('');
-      setBackOfCard('')
-      console.log(cardArray);
+    setCardToAdd([...cardArray].concat({ id: new Date().getTime(), zIndex: zIndex, front: cardFront, back: cardBack }));
+    setZIndex(zIndex - 1);
+    setFrontOfCard('');
+    setBackOfCard('')
+    console.log(cardArray);
   }
 
   return (
     <ArrayContext.Provider value={[cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit]}>
-    <div className="App">
-      <h1>Pick your poison</h1>
-      <CardEditor />
-      <CardViewer />
-    </div>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="card-editor" element={<CardEditor />} />
+          <Route path="card-viewer" element={<CardViewer />} />
+          <Route path="Flashcard-App" element={<Navigate to="/" />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </div>
     </ArrayContext.Provider>
   );
 }
