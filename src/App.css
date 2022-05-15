@@ -6,6 +6,7 @@
   gap: 3rem;
   color: var(--secondary-color);
   user-select: none;
+  background-color: var(--primary-color);
 }
 
 input {
