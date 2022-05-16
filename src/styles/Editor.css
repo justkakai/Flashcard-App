@@ -17,7 +17,7 @@
 .editor-section ul {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 80%;
     padding: 1rem;
@@ -26,14 +26,39 @@
 }
 
 .editor-section li {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0.2rem 0;
+    border: 1px solid rgb(235, 182, 10);
+    padding-left: 1rem;
+}
+
+.editor-section li:hover {
+    background: rgba(255, 223, 168, 0.3);
+}
+
+.editor-section li:hover button {
+    background: #ffca37;
+    color: rgb(73, 73, 73);
+}
+
+.editor-section li span {
+    font-size: 1.2em;
 }
 
 .editor-section li button {
+    box-shadow: none;
+    border: 1px solid hsl(44, 100%, 46%);
+    border-radius: 0;
+    background: none;
     padding: 0.7rem 2rem;
+}
+
+.editor-section li .list-buttons-container {
+    display: flex;
+    margin-left: auto;
 }
 
 .add-card-section {

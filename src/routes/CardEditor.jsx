@@ -23,6 +23,12 @@ function CardEditor() {
 
     const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit] = useContext(ArrayContext);
 
+    const removeItem = function (index) {
+        const newArray = [...cardArray];
+        newArray.splice(index, 1);
+        setCardToAdd(newArray);
+    }
+
     return (
         <motion.div className="editor-section"
             variants={containerVariants}
@@ -38,13 +44,16 @@ function CardEditor() {
                         <span>{index + 1}.</span>
                         <span><strong>Front:</strong> {item.front}</span>
                         <span><strong>Back:</strong> {item.back}</span>
-                        <button>Delete card</button>
+                        <div className="list-buttons-container">
+                            <button>Edit card</button>
+                            <button onClick={() => removeItem(index)}>Delete card</button>
+                        </div>
                     </li>
                 ))}
             </ul>
             <div className="add-card-section">
-                <input value={cardFront} onChange={(e) => setFrontOfCard(e.target.value)} type="text" placeholder="Front of card" />
-                <input value={cardBack} onChange={(e) => setBackOfCard(e.target.value)} type="text" placeholder="Back of card" />
+                <input value={cardFront} onChange={(e) => setFrontOfCard(e.target.value)} type="text" placeholder="Front of card (question)" />
+                <input value={cardBack} onChange={(e) => setBackOfCard(e.target.value)} type="text" placeholder="Back of card (answer)" />
                 <button onClick={handleSubmit}>Add Card</button>
             </div>
             <div className='nav-buttons'>
