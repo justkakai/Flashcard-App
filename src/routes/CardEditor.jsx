@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
@@ -21,7 +21,7 @@ function CardEditor() {
 
     const [viewList, setViewList] = useState(false);
 
-    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit] = useContext(ArrayContext);
+    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit] = useContext(ArrayContext);
 
     const removeItem = function (index) {
         const newArray = [...cardArray];

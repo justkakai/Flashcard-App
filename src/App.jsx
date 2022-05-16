@@ -8,7 +8,7 @@ For each card, add a button to edit the card.
 
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Home from './routes/Home';
 import CardEditor from './routes/CardEditor';
 import CardViewer from './routes/CardViewer';

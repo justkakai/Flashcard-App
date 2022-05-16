@@ -24,11 +24,20 @@ function CardViewer() {
 
     const [flipToBack, setFlipToBack] = useState(false);
 
-    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit] = useContext(ArrayContext);
+    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit] = useContext(ArrayContext);
 
     const flipCard = () => {
         console.log(cardArray);
         setFlipToBack(!flipToBack);
+    }
+
+    const nextCard = () => {
+        const newArray = [...cardArray];
+        let spliced = newArray.splice(newArray.length -1, 1);
+        // splice returns an array, which is why we have to retrieve the item from the array using its index (0)
+        newArray.unshift(spliced[0]);
+        setCardToAdd(newArray);
+        console.log(newArray);
     }
 
     return (
@@ -41,7 +50,7 @@ function CardViewer() {
             <div className="card-container">
                 {cardArray.slice(Math.max(cardArray.length - 5, 0)).map((item, index) => (
                     <Card onClick={flipCard} key={new Date().getTime()} style={{
-                        transform: `rotate(${randomDeg[Math.floor(Math.random() * randomDeg.length)]}deg)`,
+                        transform: `rotate(${randomDeg[index]}deg)`,
                     }}>
                         <span className="flashcard-title">Flashcard!</span>
                         {flipToBack ? <span className='card-text'>{item.back}</span> : <span className='card-text'>{item.front}</span>}
@@ -50,7 +59,7 @@ function CardViewer() {
                 ))}
             </div>
             <div className="nav-buttons-container-viewer">
-                <button className="flip-button">Next Card!</button>
+                <button className="flip-button" onClick={nextCard}>Next Card!</button>
                 <button className="shuffle-button">Shuffle Cards</button>
             </div>
             <div className='nav-buttons'>

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { AiFillEye } from "react-icons/ai";
 import { MdMode } from "react-icons/md";
-import { GiCardJoker } from "react-icons/gi";
+// import { GiCardJoker } from "react-icons/gi";
 import '../styles/Home.css';
 
 export default function Home() {
