@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Flashcard-App/static/css/main.d22329e0.css",
-    "main.js": "/Flashcard-App/static/js/main.db5c7e62.js",
+    "main.css": "/Flashcard-App/static/css/main.769b19bc.css",
+    "main.js": "/Flashcard-App/static/js/main.88bd63e7.js",
     "static/js/787.5d1e09b3.chunk.js": "/Flashcard-App/static/js/787.5d1e09b3.chunk.js",
     "static/media/gradient-3.png": "/Flashcard-App/static/media/gradient-3.7f046d5154fae1fdb1a3.png",
     "static/media/PolySans-Slim-Italic.otf": "/Flashcard-App/static/media/PolySans-Slim-Italic.894702dac4e00b7df3fb.otf",
@@ -12,12 +12,12 @@
     "static/media/ClashDisplay-Light.otf": "/Flashcard-App/static/media/ClashDisplay-Light.4028f953b0654fedccb2.otf",
     "static/media/ClashDisplay-Regular.otf": "/Flashcard-App/static/media/ClashDisplay-Regular.ccc51e2a3c40ce9bca53.otf",
     "index.html": "/Flashcard-App/index.html",
-    "main.d22329e0.css.map": "/Flashcard-App/static/css/main.d22329e0.css.map",
-    "main.db5c7e62.js.map": "/Flashcard-App/static/js/main.db5c7e62.js.map",
+    "main.769b19bc.css.map": "/Flashcard-App/static/css/main.769b19bc.css.map",
+    "main.88bd63e7.js.map": "/Flashcard-App/static/js/main.88bd63e7.js.map",
     "787.5d1e09b3.chunk.js.map": "/Flashcard-App/static/js/787.5d1e09b3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d22329e0.css",
-    "static/js/main.db5c7e62.js"
+    "static/css/main.769b19bc.css",
+    "static/js/main.88bd63e7.js"
   ]
 }
