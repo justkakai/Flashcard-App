@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
@@ -20,13 +20,32 @@ function CardEditor() {
     }
 
     const [viewList, setViewList] = useState(false);
+    const [todoEditing, setTodoEditing] = useState(null);
+    const [itemToEditFront, setEditFront] = useState("");
+    const [itemToEditBack, setEditBack] = useState("");
 
-    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit] = useContext(ArrayContext);
+    const {cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit} = useContext(ArrayContext);
 
     const removeItem = function (index) {
         const newArray = [...cardArray];
         newArray.splice(index, 1);
         setCardToAdd(newArray);
+    }
+
+    const editItem = function (id) {
+        const updatedArray = [...cardArray].map(item => {
+            if (item.id === id) {
+                item.front = itemToEditFront;
+                item.back = itemToEditBack;
+                console.log(cardFront);
+                console.log(cardBack);
+            }
+            return item;
+        })
+        setCardToAdd(updatedArray);
+        setTodoEditing(null);
+        setEditFront("");
+        setEditBack("");
     }
 
     return (
@@ -42,24 +61,39 @@ function CardEditor() {
                 {cardArray.map((item, index) => (
                     <li key={item.id} className="card-display">
                         <span>{index + 1}.</span>
-                        <span><strong>Front:</strong> {item.front}</span>
-                        <span><strong>Back:</strong> {item.back}</span>
+                        {todoEditing === item.id ?
+                            <input type="text" onChange={(e) => setEditFront(e.target.value)} value={itemToEditFront}></input>
+                            :
+                            <span><strong>Front:</strong> {item.front}</span>
+                        }
+                        {todoEditing === item.id ?
+                            <input type="text" onChange={(e) => setEditBack(e.target.value)} value={itemToEditBack}></input>
+                            :
+                            <span><strong>Back:</strong> {item.back}</span>
+                        }
                         <div className="list-buttons-container">
-                            <button>Edit card</button>
+                            {todoEditing === item.id ?
+                                <button onClick={() => editItem(item.id)}>Done editing!</button>
+                                :
+                                <button onClick={() => setTodoEditing(item.id)}>Edit card</button>
+                            }
                             <button onClick={() => removeItem(index)}>Delete card</button>
                         </div>
                     </li>
                 ))}
             </ul>
+
             <div className="add-card-section">
                 <input value={cardFront} onChange={(e) => setFrontOfCard(e.target.value)} type="text" placeholder="Front of card (question)" />
                 <input value={cardBack} onChange={(e) => setBackOfCard(e.target.value)} type="text" placeholder="Back of card (answer)" />
                 <button onClick={handleSubmit}>Add Card</button>
             </div>
+
             <div className='nav-buttons'>
                 <button onClick={() => { navigate("/") }}><VscArrowLeft /> Go Home</button>
                 <button onClick={() => { navigate("/card-viewer") }}>View cards <VscArrowRight /></button>
             </div>
+
         </motion.div>
     )
 }

@@ -17,10 +17,12 @@ export default function Home() {
             opacity: 1,
             transition: { delay: 0, duration: 0.5 }
         },
-        // exit: {
-        //     y: "-100%",
-        //     transition: { ease: "easeInOut"}
-        // }
+        /*
+        exit: {
+            y: "-100%",
+            transition: { ease: "easeInOut"}
+        }
+        */
     }
 
     return (

@@ -32,14 +32,14 @@ function App() {
 
   const handleSubmit = () => {
     setCardToAdd([...cardArray].concat({ id: new Date().getTime(), zIndex: zIndex, front: cardFront, back: cardBack }));
-    setZIndex(zIndex - 1);
     setFrontOfCard('');
-    setBackOfCard('')
-    console.log(cardArray);
+    setBackOfCard('');
   }
 
+  const providerValues = {cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit};
+
   return (
-    <ArrayContext.Provider value={[cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, zIndex, setZIndex, handleSubmit]}>
+    <ArrayContext.Provider value={providerValues}>
       <div className="App">
         <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.key}>

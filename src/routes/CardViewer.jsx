@@ -24,7 +24,7 @@ function CardViewer() {
 
     const [flipToBack, setFlipToBack] = useState(false);
 
-    const [cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit] = useContext(ArrayContext);
+    const {cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit} = useContext(ArrayContext);
 
     const flipCard = () => {
         console.log(cardArray);
@@ -34,9 +34,11 @@ function CardViewer() {
     const nextCard = () => {
         const newArray = [...cardArray];
         let spliced = newArray.splice(newArray.length -1, 1);
+        
         // splice returns an array, which is why we have to retrieve the item from the array using its index (0)
         newArray.unshift(spliced[0]);
         setCardToAdd(newArray);
+        setFlipToBack(false);
         console.log(newArray);
     }
 
