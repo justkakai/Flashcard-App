@@ -1,6 +1,38 @@
 :root {
-  --primary-color: #FFBE0B;
-  --secondary-color: #0B132B;
+
+  /* general colors */
+  --main-black: black;
+  --main-white: rgb(248, 248, 248);
+  --primary-color: rgb(214, 97, 255);
+  --primary-color-darker: rgba(214, 97, 255, 0.1);
+  --primary-color-lighter: rgb(39, 39, 39);
+  --secondary-color: rgb(41, 45, 58);
+  --secondary-color-darker: rgba(41, 45, 58, 0.6);
+  --input-bg-color: var(--main-white);
+  --button-text-color: rgb(0, 0, 0);
+  --button-bg-color: rgb(224, 224, 224);
+  --button-box-shadow: 10px 10px 1px var(--main-black);
+
+  /* home section colors */
+  --flashcard-color-home: var(--secondary-color-darker);
+
+  /* editor section colors */
+  --list-section-grey: rgb(58, 58, 58);
+  --list-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --list-bg-color: rgb(255, 255, 255);
+  --list-item-border-color: rgba(214, 97, 255, 0.1);
+  --list-item-bg-color-hover: rgba(87, 81, 72, 0.3);
+  --list-item-buttons-border-color: var(--main-white);
+  --list-item-buttons-hover-text-color: var(--main-white);
+  --list-item-buttons-hover-bg-color: var(--main-black);
+
+  /* viewer section colors */
+  --flashcard-color-viewer: var(--main-white);
+  --flashcard-viewer-border-bottom-color: var(--main-white);
+  --card-main-text-color: rgb(240, 226, 216);
+  --click-to-view-text-color: rgb(140, 255, 217);
+
+  /* fonts */
   --Clash-Light: "Clash-Light", sans-serif;
   --Clash-Regular: "Clash-Regular", sans-serif;
   --Clash-Medium: "Clash-Medium", sans-serif;
@@ -8,6 +40,7 @@
   --Cabinet-Regular: "Cabinet-Regular", sans-serif;
   --Cabinet-Medium: "Cabinet-Medium", sans-serif;
   --PolySans: "PolySans", sans-serif;
+
 }
 
 * {

@@ -17,7 +17,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--list-box-shadow);
+    background-color: var(--list-bg-color);
     width: 80%;
     padding: 1rem;
     overflow-y: scroll;
@@ -25,39 +26,53 @@
 }
 
 .editor-section li {
+    color: var(--main-black);
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin: 0.2rem 0;
-    border: 1px solid rgb(235, 182, 10);
+    border-bottom: 1px solid var(--list-item-border-color);
     padding-left: 1rem;
 }
 
 .editor-section li:hover {
-    background: rgba(255, 223, 168, 0.3);
+    background: var(--list-item-bg-color-hover);
 }
 
 .editor-section li:hover button {
-    background: #ffca37;
-    color: rgb(73, 73, 73);
+    background: var(--list-item-buttons-hover-bg-color);
+    color: var(--list-item-buttons-hover-text-color);
+    border: 1px solid var(--main-black);
 }
 
 .editor-section li span {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    color: var(--list-section-grey);
+    transition: letter-spacing 1s;
+}
+
+.editor-section li:hover span {
+    letter-spacing: 0.01rem;
+    transition: all 1s;
 }
 
 .editor-section li button {
     box-shadow: none;
-    border: 1px solid hsl(44, 100%, 46%);
+    border: 1px solid var(--list-item-buttons-border-color);
     border-radius: 0;
     background: none;
     padding: 0.7rem 2rem;
+    color: var(--list-section-grey);
 }
 
 .editor-section li .list-buttons-container {
     display: flex;
     margin-left: auto;
+}
+
+.editor-section strong {
+    color: var(--main-black);
 }
 
 .add-card-section {

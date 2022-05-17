@@ -14,25 +14,34 @@
     width: 100%;
     height: 50%;
     overflow: hidden;
-    color: white;
 }
 
 .flashcard-title {
-    color: var(--primary-color);
+    color: var(--flashcard-color-viewer);
     font-size: 1.3rem;
     font-family: var(--PolySans);
-    border-bottom: 1px solid #553f03;
+    border-bottom: 1px solid var(--flashcard-viewer-border-bottom-color);
 }
 
 .card-text {
     font-size: 1.3rem;
-    color: rgb(240, 226, 216);
+    color: var(--card-main-text-color);
 }
 
 .view-answer-text {
     font-size: 1.1em;
-    color: #ac7b6f;
+    color: var(--click-to-view-text-color);
+    /* animation: glow 2s linear infinite; */
 }
+
+/* @keyframes glow {
+    from, to {
+        color: var(--click-to-view-text-color);
+    }
+    50% {
+        color: var(--main-white);
+    }
+} */
 
 .nav-buttons-container-viewer {
     display: flex;

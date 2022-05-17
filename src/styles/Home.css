@@ -11,7 +11,7 @@
     font-family: var(--PolySans);
     font-size: 3rem;
     letter-spacing: 0.2rem;
-    color: rgba(75, 71, 57, 0.3);
+    color: var(--flashcard-color-home);
     margin-bottom: 7rem;
     display: flex;
     justify-content: center;
