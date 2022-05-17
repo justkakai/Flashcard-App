@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/Flashcard-App/static/css/main.769b19bc.css",
-    "main.js": "/Flashcard-App/static/js/main.88bd63e7.js",
+    "main.css": "/Flashcard-App/static/css/main.9158408a.css",
+    "main.js": "/Flashcard-App/static/js/main.16c8d8b4.js",
     "static/js/787.5d1e09b3.chunk.js": "/Flashcard-App/static/js/787.5d1e09b3.chunk.js",
     "static/media/gradient-3.png": "/Flashcard-App/static/media/gradient-3.7f046d5154fae1fdb1a3.png",
     "static/media/PolySans-Slim-Italic.otf": "/Flashcard-App/static/media/PolySans-Slim-Italic.894702dac4e00b7df3fb.otf",
+    "static/media/gradient-4.png": "/Flashcard-App/static/media/gradient-4.9ed39dd426d2befafd24.png",
     "static/media/Satoshi-Regular.otf": "/Flashcard-App/static/media/Satoshi-Regular.811ccb0b5af1892a71df.otf",
     "static/media/CabinetGrotesk-Regular.otf": "/Flashcard-App/static/media/CabinetGrotesk-Regular.6c7032f4db5e585f0c48.otf",
     "static/media/CabinetGrotesk-Medium.otf": "/Flashcard-App/static/media/CabinetGrotesk-Medium.b8b578586abc9d55dcda.otf",
@@ -12,12 +13,12 @@
     "static/media/ClashDisplay-Light.otf": "/Flashcard-App/static/media/ClashDisplay-Light.4028f953b0654fedccb2.otf",
     "static/media/ClashDisplay-Regular.otf": "/Flashcard-App/static/media/ClashDisplay-Regular.ccc51e2a3c40ce9bca53.otf",
     "index.html": "/Flashcard-App/index.html",
-    "main.769b19bc.css.map": "/Flashcard-App/static/css/main.769b19bc.css.map",
-    "main.88bd63e7.js.map": "/Flashcard-App/static/js/main.88bd63e7.js.map",
+    "main.9158408a.css.map": "/Flashcard-App/static/css/main.9158408a.css.map",
+    "main.16c8d8b4.js.map": "/Flashcard-App/static/js/main.16c8d8b4.js.map",
     "787.5d1e09b3.chunk.js.map": "/Flashcard-App/static/js/787.5d1e09b3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.769b19bc.css",
-    "static/js/main.88bd63e7.js"
+    "static/css/main.9158408a.css",
+    "static/js/main.16c8d8b4.js"
   ]
 }
