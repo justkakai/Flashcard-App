@@ -85,3 +85,8 @@
     gap: 20px;
 }
 
+.card-display input {
+    background-color: var(--click-to-view-text-color);
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
