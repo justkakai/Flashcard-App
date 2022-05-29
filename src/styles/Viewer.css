@@ -52,3 +52,11 @@
     width: 100%;
     height: 60%;
 }
+
+/*------------------------------MEDIA QUERIES------------------------------*/
+
+/* @media (max-height: 700px) {
+    .keyboard {
+        overflow-x: auto;
+    }
+} */
