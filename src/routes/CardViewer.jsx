@@ -24,7 +24,7 @@ function CardViewer() {
 
     const [flipToBack, setFlipToBack] = useState(false);
 
-    const {cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit} = useContext(ArrayContext);
+    const { cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit } = useContext(ArrayContext);
 
     const flipCard = () => {
         console.log(cardArray);
@@ -33,13 +33,19 @@ function CardViewer() {
 
     const nextCard = () => {
         const newArray = [...cardArray];
-        let spliced = newArray.splice(newArray.length -1, 1);
-        
+        let spliced = newArray.splice(newArray.length - 1, 1);
         // splice returns an array, which is why we have to retrieve the item from the array using its index (0)
         newArray.unshift(spliced[0]);
         setCardToAdd(newArray);
         setFlipToBack(false);
-        console.log(newArray);
+    }
+
+    const previousCard = () => {
+        const newArray = [...cardArray];
+        let shifted = newArray.shift();
+        newArray.push(shifted);
+        setCardToAdd(newArray);
+        setFlipToBack(false);
     }
 
     return (
@@ -49,20 +55,20 @@ function CardViewer() {
             animate="visible"
             exit="exit"
         >
-            <div className="card-container">
-                {cardArray.slice(Math.max(cardArray.length - 5, 0)).map((item, index) => (
-                    <Card onClick={flipCard} key={new Date().getTime()} style={{
-                        transform: `rotate(${randomDeg[index]}deg)`,
-                    }}>
-                        <span className="flashcard-title">Flashcard!</span>
-                        {flipToBack ? <span className='card-text'>{item.back}</span> : <span className='card-text'>{item.front}</span>}
-                        {flipToBack ? <span></span> : <span className='view-answer-text'>Click to view answer!</span>}
-                    </Card>
-                ))}
-            </div>
-            <div className="nav-buttons-container-viewer">
-                <button className="flip-button" onClick={nextCard}>Next Card!</button>
-                <button className="shuffle-button">Shuffle Cards</button>
+            <div className="cards-and-navigation">
+                <button className="previous-button" onClick={previousCard}>Previous Card!</button>
+                <div className="card-container">
+                    {cardArray.slice(Math.max(cardArray.length - 5, 0)).map((item, index) => (
+                        <Card onClick={flipCard} key={new Date().getTime()} style={{
+                            transform: `rotate(${randomDeg[index]}deg)`,
+                        }}>
+                            <span className="flashcard-title">Flashcard!</span>
+                            {flipToBack ? <span className='card-text'>{item.back}</span> : <span className='card-text'>{item.front}</span>}
+                            {flipToBack ? <span></span> : <span className='view-answer-text'>Click to view answer!</span>}
+                        </Card>
+                    ))}
+                </div>
+                <button className="next-button" onClick={nextCard}>Next Card!</button>
             </div>
             <div className='nav-buttons'>
                 <button onClick={() => { navigate("/") }}><VscReply /> Go Home</button>

@@ -17,6 +17,11 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+
+    background: -webkit-linear-gradient(var(--main-black) 40%, var(--main-white) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .home-section h2 {

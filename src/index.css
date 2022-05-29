@@ -8,6 +8,7 @@
   --primary-color-lighter: rgb(39, 39, 39);
   --secondary-color: rgb(41, 45, 58);
   --secondary-color-darker: rgba(41, 45, 58, 0.6);
+  --tertiary-color: rgb(140, 255, 217);
   --input-bg-color: var(--main-white);
   --button-text-color: rgb(0, 0, 0);
   --button-bg-color: rgb(224, 224, 224);
@@ -30,7 +31,7 @@
   --flashcard-color-viewer: var(--main-white);
   --flashcard-viewer-border-bottom-color: var(--main-white);
   --card-main-text-color: rgb(240, 226, 216);
-  --click-to-view-text-color: rgb(140, 255, 217);
+  --click-to-view-text-color: var(--tertiary-color);
 
   /* fonts */
   --Clash-Light: "Clash-Light", sans-serif;
@@ -85,7 +86,6 @@
 }
 
 body {
-  margin: 0;
   font-family: "Satoshi-Regular", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

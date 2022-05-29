@@ -37,8 +37,6 @@ function CardEditor() {
             if (item.id === id) {
                 item.front = itemToEditFront;
                 item.back = itemToEditBack;
-                console.log(cardFront);
-                console.log(cardBack);
             }
             return item;
         })
@@ -55,25 +53,25 @@ function CardEditor() {
             animate="visible"
             exit="exit"
         >
-            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="toggle-list" onClick={() => setViewList(!viewList)}>{viewList ? "Collapse list" : "Display questions list"}</motion.button>
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="toggle-list" onClick={() => setViewList(!viewList)}>{viewList ? "Collapse list" : "Display list of questions"}</motion.button>
 
             <ul style={viewList ? { height: "30rem" } : { height: "0", padding: "0" }}>
                 {cardArray.map((item, index) => (
                     <li key={item.id} className="card-display">
                         <span>{index + 1}.</span>
                         {todoEditing === item.id ?
-                            <input type="text" onChange={(e) => setEditFront(e.target.value)} value={itemToEditFront} placeholder="Edit front of card (question)"></input>
+                            <input type="text" onChange={(e) => setEditFront(e.target.value)} value={itemToEditFront} placeholder={item.front}></input>
                             :
-                            <span><strong>Front:</strong> {item.front}</span>
+                            <span><strong>Question:</strong> {item.front}</span>
                         }
                         {todoEditing === item.id ?
-                            <input type="text" onChange={(e) => setEditBack(e.target.value)} value={itemToEditBack} placeholder="Edit back of card (answer)"></input>
+                            <input type="text" onChange={(e) => setEditBack(e.target.value)} value={itemToEditBack} placeholder={item.back}></input>
                             :
-                            <span><strong>Back:</strong> {item.back}</span>
+                            <span><strong>Answer:</strong> {item.back}</span>
                         }
                         <div className="list-buttons-container">
                             {todoEditing === item.id ?
-                                <button onClick={() => editItem(item.id)}>Done editing!</button>
+                                <button className='done-editing-button' onClick={() => editItem(item.id)}>Done editing!</button>
                                 :
                                 <button onClick={() => setTodoEditing(item.id)}>Edit card</button>
                             }
