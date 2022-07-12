@@ -81,6 +81,8 @@
 
 .add-card-section {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -94,4 +96,34 @@
     padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
+/*------------------------------MEDIA QUERIES------------------------------*/
+/* @media (max-height: 1046px) {
+    .editor-section {
+        padding: 2rem 0;
+        justify-content: flex-start;
+    }
+} */
+/* @media (max-height: 920px) {
+    .editor-section {
+        padding: 2rem 0;
+    }
+} */
+
+/* @media (max-height: 477px) {
+    .editor-section ul {
+        padding: 0;
+    }
+}
+*/
+@media (max-width: 915px) {
+    .add-card-section input {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width:785px) {
+    .add-card-section input {
+        width: 90%;
+    }
+} 
 

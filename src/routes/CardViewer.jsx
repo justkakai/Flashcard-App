@@ -24,7 +24,7 @@ function CardViewer() {
 
     const [flipToBack, setFlipToBack] = useState(false);
 
-    const { cardArray, setCardToAdd, cardFront, setFrontOfCard, cardBack, setBackOfCard, handleSubmit } = useContext(ArrayContext);
+    const { cardArray, setCardToAdd } = useContext(ArrayContext);
 
     const flipCard = () => {
         console.log(cardArray);
@@ -56,19 +56,43 @@ function CardViewer() {
             exit="exit"
         >
             <div className="cards-and-navigation">
-                <button className="previous-button" onClick={previousCard}>Previous Card!</button>
-                <div className="card-container">
-                    {cardArray.slice(Math.max(cardArray.length - 5, 0)).map((item, index) => (
-                        <Card onClick={flipCard} key={new Date().getTime()} style={{
-                            transform: `rotate(${randomDeg[index]}deg)`,
-                        }}>
-                            <span className="flashcard-title">Flashcard!</span>
-                            {flipToBack ? <span className='card-text'>{item.back}</span> : <span className='card-text'>{item.front}</span>}
-                            {flipToBack ? <span></span> : <span className='view-answer-text'>Click to view answer!</span>}
-                        </Card>
-                    ))}
-                </div>
-                <button className="next-button" onClick={nextCard}>Next Card!</button>
+                {
+                    window.innerWidth > 1350 ?
+                        <>
+                            <button className="previous-button" onClick={previousCard}>Previous Card!</button>
+                            <div className="card-container">
+                                {cardArray.slice(Math.max(cardArray.length - 5, 0)).map((item, index) => (
+                                    <Card onClick={flipCard} key={new Date().getTime()} style={{
+                                        transform: `rotate(${randomDeg[index]}deg)`,
+                                    }}>
+                                        <span className="flashcard-title">Flashcard!</span>
+                                        {flipToBack ? <span className='card-text'>{item.back}</span> : <span className='card-text'>{item.front}</span>}
+                                        {flipToBack ? <span></span> : <span className='view-answer-text'>Click to view answer!</span>}
+                                    </Card>
+                                ))}
+                            </div>
+                            <button className="next-button" onClick={nextCard}>Next Card!</button>
+                        </>
+                        :
+                        <>
+                            <div className="card-container">
+                                {cardArray.slice(Math.max(cardArray.length - 5, 0)).map((item, index) => (
+                                    <Card onClick={flipCard} key={new Date().getTime()} style={{
+                                        transform: `rotate(${randomDeg[index]}deg)`,
+                                    }}>
+                                        <span className="flashcard-title">Flashcard!</span>
+                                        {flipToBack ? <span className='card-text'>{item.back}</span> : <span className='card-text'>{item.front}</span>}
+                                        {flipToBack ? <span></span> : <span className='view-answer-text'>Click to view answer!</span>}
+                                    </Card>
+                                ))}
+                            </div>
+                            <div className="buttons-container">
+                                <button className="previous-button" onClick={previousCard}>Previous Card!</button>
+                                <button className="next-button" onClick={nextCard}>Next Card!</button>
+                            </div>
+                        </>
+                }
+
             </div>
             <div className='nav-buttons'>
                 <button onClick={() => { navigate("/") }}><VscReply /> Go Home</button>
